@@ -49,6 +49,7 @@ public class PlayerController : MonoBehaviour
     public BoxCollider2D playerCollider;
     float playerGameSpeed = 1;
     bool BulletTimeStarted = false;
+    public GameObject Trail;
 
     public void Start()
     {
@@ -63,6 +64,10 @@ public class PlayerController : MonoBehaviour
 
     public void Update()
     {
+        if (Input.GetKey("p"))
+        {
+            Instantiate(Trail, transform.position, Quaternion.identity);
+        }
 
         previousState = currentState;
 
